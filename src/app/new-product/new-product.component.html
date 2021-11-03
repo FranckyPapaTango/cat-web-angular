@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="col-md-9 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Ajouter un Nouveau Produit</div>
+            <div class="panel-body" *ngIf="mode==1">
+                <form  #f="ngForm" (ngSubmit)="onSaveProduct(f.value)">
+                    <div class="form-group">
+                        <label class="control-label">désignation</label>
+                        <input class="form-control " name="designation"   type="text" name="designation" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">prix</label>
+                        <input class="form-control " name="price"   type="text" name="price" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">quantité</label>
+                        <input class="form-control " name="quantity"   type="number" name="quantity" ngModel>
+                    </div>
+                    <button class="btn btn-success" type="submit">Save</button>
+                </form>
+            </div>
+
+            <div class="panel-body" *ngIf="mode==2">
+                <button class="btn btn-success" (click)="onNewProduct()">Ajouter un Nouveau Produit</button>
+                <p></p>
+                <div class="form-group">
+                    <label>ID:</label>
+                    <label >{{currentProduct.id}}</label>
+                </div>
+                <div class="form-group">
+                    <label>Désignation:</label>
+                    <label>{{currentProduct.designation}}</label>
+                </div>
+                <div class="form-group">
+                    <label>Prix:</label>
+                    <label>{{currentProduct.price}}</label>
+                </div>
+                <div class="form-group">
+                    <label>Quantité:</label>
+                    <label>{{currentProduct.quantity}}</label>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
